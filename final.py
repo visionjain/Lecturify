@@ -1,4 +1,5 @@
 import io
+import os
 import streamlit as st
 from gtts import gTTS
 from io import BytesIO
@@ -8,7 +9,9 @@ import google.generativeai as genai
 import markdown
 from docx import Document
 from io import BytesIO
+from dotenv import load_dotenv
 
+load_dotenv()
 # Hide Streamlit footer
 hide_streamlit_style = """
 <style>
@@ -18,7 +21,7 @@ hide_streamlit_style = """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 # Configure Google Generative AI
-genai.configure(api_key="AIzaSyDWAaiCgtSDSG0ufoYszqGyU4QXp4pL-no")
+genai.configure(api_key=os.getenv("GENAI_API_KEY"))
 
 generation_config = {
     "temperature": 1,
