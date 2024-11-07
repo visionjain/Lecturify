@@ -7,4 +7,3 @@ SpeechRecognition==3.10.4
 streamlit
 Pillow
 google-generativeai
-dotenv
